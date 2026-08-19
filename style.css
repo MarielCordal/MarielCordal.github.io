@@ -1,25 +1,27 @@
-css
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 
 :root {
 
-    --bg: #f3f0e8;
+    --bg: #F8F8F6;
 
-    --black: #171717;
+    --black: #111111;
 
-    --gray: #77736b;
+    --gray: #747474;
 
-    --line: #d1cdc3;
+    --line: #D9D9D9;
 
-    --accent: #b7e36a;
+    --blue: #4057FF;
 
-    --white: #f8f7f2;
+    --white: #FFFFFF;
 
 }
 
 
-/* RESET */
+/* =========================
+   RESET
+========================= */
 
 * {
     margin: 0;
@@ -48,7 +50,7 @@ body {
 
 main {
 
-    max-width: 1450px;
+    max-width: 1500px;
 
     margin: auto;
 
@@ -66,9 +68,9 @@ a {
 }
 
 
-/* --------------------------------
+/* =========================
    HEADER
--------------------------------- */
+========================= */
 
 .header {
 
@@ -104,7 +106,7 @@ a {
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr .8fr;
 
     gap: 100px;
 
@@ -132,7 +134,7 @@ a {
 
 h1 {
 
-    font-size: clamp(80px, 12vw, 170px);
+    font-size: clamp(80px, 12vw, 175px);
 
     line-height: .82;
 
@@ -154,9 +156,7 @@ h1 em {
 
 .hero-intro {
 
-    max-width: 470px;
-
-    padding-bottom: 10px;
+    max-width: 450px;
 
 }
 
@@ -198,9 +198,18 @@ h1 em {
 }
 
 
-/* --------------------------------
+.links a:hover {
+
+    color: var(--blue);
+
+    border-color: var(--blue);
+
+}
+
+
+/* =========================
    ABOUT
--------------------------------- */
+========================= */
 
 .about {
 
@@ -211,8 +220,6 @@ h1 em {
     display: grid;
 
     grid-template-columns: 25% 75%;
-
-    gap: 50px;
 
 }
 
@@ -265,8 +272,6 @@ h1 em {
 
     color: var(--gray);
 
-    font-size: 15px;
-
 }
 
 
@@ -302,16 +307,18 @@ h1 em {
 
 .services span:hover {
 
-    background: var(--accent);
+    background: var(--blue);
 
-    border-color: var(--accent);
+    color: var(--white);
+
+    border-color: var(--blue);
 
 }
 
 
-/* --------------------------------
-   CLIENTS
--------------------------------- */
+/* =========================
+   CLIENT STORIES
+========================= */
 
 .clients {
 
@@ -323,28 +330,28 @@ h1 em {
 
     margin-right: -5vw;
 
-    padding: 130px 5vw;
+    padding: 140px 5vw;
 
 }
 
 
-.clients-title {
+.clients-intro {
 
-    margin-bottom: 100px;
-
-}
-
-
-.clients-title .label {
-
-    color: #999;
+    padding-bottom: 120px;
 
 }
 
 
-.clients-title h2 {
+.clients-intro .label {
 
-    font-size: clamp(60px, 9vw, 130px);
+    color: #888;
+
+}
+
+
+.clients-intro h2 {
+
+    font-size: clamp(60px, 9vw, 135px);
 
     line-height: .85;
 
@@ -353,7 +360,7 @@ h1 em {
 }
 
 
-.clients-title h2 em {
+.clients-intro h2 em {
 
     font-family: Georgia, serif;
 
@@ -362,37 +369,59 @@ h1 em {
 }
 
 
-.client {
+/* =========================
+   INDIVIDUAL CLIENT
+========================= */
 
-    border-top: 1px solid #3f3f3f;
+.client-story {
 
-    padding: 35px 0 70px;
+    display: grid;
 
-    transition: .3s;
+    grid-template-columns: 70px 1fr;
+
+    gap: 40px;
+
+    border-top: 1px solid #3d3d3d;
+
+    padding: 80px 0 120px;
 
 }
 
 
-.client:last-child {
+.client-story:last-child {
 
-    border-bottom: 1px solid #3f3f3f;
+    border-bottom: 1px solid #3d3d3d;
 
 }
 
 
-.client-top {
+.story-number {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 11px;
+
+    color: var(--blue);
+
+}
+
+
+.story-header {
 
     display: flex;
 
+    align-items: baseline;
+
     justify-content: space-between;
 
-    margin-bottom: 45px;
+    gap: 30px;
+
+    margin-bottom: 70px;
 
 }
 
 
-.client-number,
-.client-type {
+.story-category {
 
     font-family: "DM Mono", monospace;
 
@@ -400,78 +429,90 @@ h1 em {
 
     letter-spacing: .12em;
 
-    color: #999;
+    color: #888;
 
 }
 
 
-.client-body {
+.story-header h3 {
+
+    font-size: clamp(50px, 7vw, 105px);
+
+    line-height: .85;
+
+    letter-spacing: -.07em;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================
+   STORY CONTENT
+========================= */
+
+.story-grid {
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: .7fr 1.3fr;
 
     gap: 80px;
 
 }
 
 
-.client-name h3 {
+.story-text {
 
-    font-size: clamp(40px, 6vw, 85px);
-
-    line-height: .9;
-
-    letter-spacing: -.07em;
-
-    margin-bottom: 20px;
+    max-width: 420px;
 
 }
 
 
-.client-name p {
+.story-text h4 {
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .12em;
+
+    color: var(--blue);
+
+    margin-bottom: 15px;
+
+}
+
+
+.story-text p {
 
     color: #999;
 
-    max-width: 300px;
-
-}
-
-
-.client-description {
-
-    max-width: 400px;
-
-}
-
-
-.client-description > p {
-
-    color: #aaa;
-
     font-size: 14px;
 
-    line-height: 1.6;
+    margin-bottom: 50px;
 
 }
 
 
-.client-details {
+.story-tags {
 
     display: flex;
 
-    gap: 10px;
+    flex-wrap: wrap;
 
-    margin-top: 30px;
+    gap: 8px;
 
 }
 
 
-.client-details span {
+.story-tags span {
 
     border: 1px solid #555;
 
-    padding: 6px 9px;
+    padding: 7px 10px;
 
     font-family: "DM Mono", monospace;
 
@@ -482,15 +523,17 @@ h1 em {
 }
 
 
-.client-visual {
+/* =========================
+   CLIENT VISUAL
+========================= */
 
-    height: 280px;
+.story-visual {
 
-    margin-top: 60px;
+    min-height: 500px;
 
-    background: #d7d2c7;
+    background: var(--blue);
 
-    color: var(--black);
+    color: var(--white);
 
     display: flex;
 
@@ -498,47 +541,94 @@ h1 em {
 
     justify-content: center;
 
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.story-visual span {
+
+    font-size: clamp(35px, 5vw, 75px);
+
+    font-weight: 800;
+
+    letter-spacing: -.07em;
+
+}
+
+
+.visual-number {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    right: 25px;
+
     font-family: "DM Mono", monospace;
 
-    font-size: 11px;
-
-    letter-spacing: .15em;
-
-    transition: .3s;
+    font-size: 10px;
 
 }
 
 
-.client:nth-child(2) .client-visual {
+/* Different visual for each client */
 
-    background: var(--accent);
+.client-story:nth-child(3) .story-visual {
 
-}
+    background: #E8E8E8;
 
-
-.client:nth-child(3) .client-visual {
-
-    background: #c9c6d8;
+    color: var(--black);
 
 }
 
 
-.client:hover .client-visual {
+.client-story:nth-child(4) .story-visual {
 
-    transform: translateY(-5px);
+    background: var(--white);
+
+    color: var(--black);
 
 }
 
 
-/* --------------------------------
+.client-story:nth-child(4) .story-visual::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+
+}
+
+
+.client-story:nth-child(4) .story-visual span {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* =========================
    CONTACT
--------------------------------- */
+========================= */
 
 .contact {
 
     text-align: center;
 
-    padding: 160px 0;
+    padding: 170px 0;
 
 }
 
@@ -578,9 +668,18 @@ h1 em {
 }
 
 
-/* --------------------------------
+.contact-link:hover {
+
+    color: var(--blue);
+
+    border-color: var(--blue);
+
+}
+
+
+/* =========================
    FOOTER
--------------------------------- */
+========================= */
 
 footer {
 
@@ -603,9 +702,9 @@ footer {
 }
 
 
-/* --------------------------------
+/* =========================
    MOBILE
--------------------------------- */
+========================= */
 
 @media (max-width: 800px) {
 
@@ -637,6 +736,8 @@ footer {
 
         grid-template-columns: 1fr;
 
+        gap: 50px;
+
         padding: 90px 0;
 
     }
@@ -653,20 +754,41 @@ footer {
     }
 
 
-    .client-body {
+    .client-story {
 
         grid-template-columns: 1fr;
 
-        gap: 35px;
+        gap: 30px;
 
     }
 
 
-    .client-visual {
+    .story-header {
 
-        height: 200px;
+        display: block;
 
-        margin-top: 30px;
+    }
+
+
+    .story-category {
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .story-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+    }
+
+
+    .story-visual {
+
+        min-height: 300px;
 
     }
 
@@ -687,3 +809,4 @@ footer {
     }
 
 }
+
